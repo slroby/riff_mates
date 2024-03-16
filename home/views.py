@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from django.http import JsonResponse
 from django.shortcuts import render
+from datetime import datetime
 
 def credits(request):
     content = "Nicky\nSean"
@@ -24,7 +25,18 @@ def news(request):
 
     return render(request, "news2.html", data)
 
+def news_advanced(request):
+    data = {
+        "news": [(datetime.fromisoformat('2024-03-16'), "RiffMates now has a news page!"), 
+                 (datetime.fromisoformat('2024-03-15'), "RiffMates has its first pages!")],
+    }
+
+    print(data)
+    return render(request, "news_adv.html", data)
+
+
 print("http://127.0.0.1:8000/news/")
+print("http://127.0.0.1:8000/news_advanced/")
 print("http://127.0.0.1:8000/credits/")
 print("http://127.0.0.1:8000/about/")
 print("http://127.0.0.1:8000/version/")

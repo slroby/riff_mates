@@ -1,0 +1,20 @@
+<!-- RiffMates/templates/news_adv.html -->
+{% extends "base.html" %}
+
+{% block title %}
+  {{block.super}}: News
+{% endblock %}
+
+{% block content %}
+  <h1>RiffMates News Advanced</h1>
+
+  <table>
+    {% for d, subject in news %}
+      <tr class="{% cycle 'row1' 'row2' %}">
+        <td>{{ d | date:"SHORT_DATE_FORMAT" }}</td>
+        <td>{{ subject }}</td>
+      </tr>
+    {% endfor %}
+  </table>
+
+{% endblock content %}
