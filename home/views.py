@@ -22,7 +22,7 @@ def news(request):
         "news": ["RiffMates now has a news page!", "RiffMates has its first pages!"],
     }
 
-    return render(request, "news.html", data)
+    return render(request, "news2.html", data)
 
 print("http://127.0.0.1:8000/news/")
 print("http://127.0.0.1:8000/credits/")
