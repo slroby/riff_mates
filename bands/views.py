@@ -9,3 +9,6 @@ def musician(request, musician_id):
     }
 
     return render(request, "musician.html", data) 
+
+print("http://127.0.0.1:8000/bands/musician/1")
+
