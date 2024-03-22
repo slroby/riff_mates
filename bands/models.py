@@ -16,7 +16,7 @@ class Venue(models.Model):
     
 class Room(models.Model):
     name = models.CharField(max_length=50)
-    venue = models.ForeignKey(Venue, onDelete=models.CASCADE)
+    venue = models.ForeignKey(Venue, on_delete=models.CASCADE)
 
     def __str__(self):
         return f"Room(id={self.id}, name={self.name}, venue={self.venue})"
