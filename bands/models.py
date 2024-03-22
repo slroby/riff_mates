@@ -19,4 +19,4 @@ class Room(models.Model):
     venue = models.ForeignKey(Venue, on_delete=models.CASCADE)
 
     def __str__(self):
-        return f"Room(id={self.id}, name={self.name}, venue={self.venue})"
+        return f"Room(id={self.id}, name={self.name})"
