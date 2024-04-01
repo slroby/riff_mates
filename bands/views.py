@@ -49,8 +49,12 @@ def band(request, band_id):
     band = get_object_or_404(Band, id=band_id)
     print(band)
 
+    musicians = band.musicians.all()
+    print(musicians)
+
     data = {
         "band": band,
+        "musicians": musicians,
     }
 
     return render(request, "band.html", data)
