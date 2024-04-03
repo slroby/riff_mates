@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}
+  {{block.super}}: Room Listing
+{% endblock %}
+
+{% block content %}
+  <h1>Venue</h1>
+
+  <ul>
+    {% for room in venue.room_set.all %}
+      <li> <a href="{% url 'room' room.id %}"> 
+        {{room.name}}
+      </a> </li>
+    {% empty %}
+      <li> <i>No rooms in the database</i> </li>
+    {% endfor %}
+  </ul>
+
+
+
+{% endblock content %}
