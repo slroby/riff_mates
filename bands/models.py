@@ -10,6 +10,14 @@ class Musician(models.Model):
         return f"Musician(id={self.id}, last_name={self.last_name})"
 
 
+class Band(models.Model):
+    name = models.CharField(max_length=50)
+    musicians = models.ManyToManyField(Musician)
+
+    def __str__(self):
+        return f"Band(id={self.id}, name={self.name})"
+
+
 class Venue(models.Model):
     name = models.CharField(max_length=50)
 
@@ -23,11 +31,3 @@ class Room(models.Model):
 
     def __str__(self):
         return f"Room(id={self.id}, name={self.name})"
-
-
-class Band(models.Model):
-    name = models.CharField(max_length=50)
-    musicians = models.ManyToManyField(Musician)
-
-    def __str__(self):
-        return f"Band(id={self.id}, name={self.name})"

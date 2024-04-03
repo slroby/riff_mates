@@ -95,6 +95,8 @@ def room(request, room_id):
     room = get_object_or_404(Room, id=room_id)
     print(room)
 
+    print(venue)
+
     data = {
         "room": room,
         "musicians": musicians,

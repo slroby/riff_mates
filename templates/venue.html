@@ -5,12 +5,12 @@
 {% endblock %}
 
 {% block content %}
-  <h1>Venue</h1>
+  <h1>{{venue.name}}</h1>
 
   <ul>
     {% for room in venue.room_set.all %}
       <li> <a href="{% url 'room' room.id %}"> 
-        {{room.name}}
+        {{room.name}} Room
       </a> </li>
     {% empty %}
       <li> <i>No rooms in the database</i> </li>
